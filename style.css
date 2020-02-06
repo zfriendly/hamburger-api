@@ -4,6 +4,7 @@
 body {
   background-color: white;
   margin: 0 auto;
+  font-family: "Raleway", sans-serif;
 }
 .dog__container {
   display: flex;
@@ -67,12 +68,15 @@ main {
 }
 .nav__list {
   position: absolute;
-  line-height: 60px;
+  line-height: 40px;
+  text-align: left;
   right: 0;
   margin-top: 0;
   background-color: black;
-  font-size: 22px;
+  font-size: 16px;
   border: 3px solid green;
+  width: 350px;
+  padding-bottom: 100%;
 }
 a {
   text-decoration: none;
