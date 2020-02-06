@@ -1,10 +1,9 @@
-* {
+/* * {
   border: 1px dotted red;
-}
+} */
 body {
   background-color: white;
-  /* display: flex;
-  justify-content: space-between; */
+  margin: 0 auto;
 }
 .dog__container {
   display: flex;
@@ -21,6 +20,8 @@ main {
 .header__bar {
   display: flex;
   justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
   align-items: center;
   color: white;
   height: 50px;
@@ -54,4 +55,30 @@ main {
 .link {
   color: black;
   text-decoration: none;
+}
+.hamburger {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.nav__list {
+  position: absolute;
+  line-height: 60px;
+  right: 0;
+  margin-top: 0;
+  background-color: black;
+  font-size: 22px;
+  border: 3px solid green;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+hr {
+  color: white;
+  background-color: white;
 }
