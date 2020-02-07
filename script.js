@@ -43,4 +43,3 @@ function openMenu(e) {
   e.preventDefault();
   navList.classList.toggle("nav__list--is-open");
 }
-// edit classes to
