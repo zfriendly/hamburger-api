@@ -71,14 +71,20 @@ main {
   position: absolute;
   line-height: 40px;
   text-align: left;
-  right: 0;
+  right: -100%;
   margin-top: 0;
   background-color: #323032;
   font-size: 16px;
   border: 3px solid green;
   width: 350px;
   padding-bottom: 100%;
+  transition: all 1s ease-in-out;
 }
+
+.nav__list.nav__list--is-open {
+  right: 0;
+}
+
 a {
   text-decoration: none;
   color: white;

@@ -23,7 +23,7 @@ function dogNameGenerator(e) {
     });
 }
 let dogLink = document.querySelectorAll(".link");
-let dogArray = [23, 36, 41, 50, 68, 71, 149, 177, 222, 226];
+let dogArray = [10, 23, 36, 41, 71, 125, 149, 184, 177, 226];
 for (i = 0; i < dogArray.length; i++) {
   fetch(`${baseUrl}${dogArray[i]}`, {
     headers: {
@@ -31,20 +31,18 @@ for (i = 0; i < dogArray.length; i++) {
     }
   })
     .then(res => {
-      console.log("success", res);
+      console.log(res);
       return res.json();
     })
-    .then(res => {});
+    .then(data => {
+      console.log(data);
+    });
 }
-
-/* Aussie - 23
-Malinois - 36
-Bernese - 41
-Border Collie - 50
-Corgi - 68
-Cavalier - 71
-Labrador - 149
-Toller - 177
-Shiba Inu - 222
-Siberian Husky - 226
-*/
+let navList = document.querySelector(".nav__list");
+let hamburger = document.querySelector(".hamburger");
+hamburger.addEventListener("click", openMenu);
+function openMenu(e) {
+  e.preventDefault();
+  navList.classList.toggle("nav__list--is-open");
+}
+// edit classes to
