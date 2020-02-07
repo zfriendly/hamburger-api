@@ -57,7 +57,13 @@ main {
 .link {
   color: #323032;
   text-decoration: none;
+  border-bottom: 2px solid white;
 }
+.link:hover {
+  background-color: #1f1e1e;
+  font-size: 18px;
+}
+
 .hamburger {
   background: none;
   color: inherit;
@@ -75,10 +81,9 @@ main {
   margin-top: 0;
   background-color: #323032;
   font-size: 16px;
-  border: 3px solid green;
   width: 350px;
-  padding-bottom: 100%;
   transition: all 1s ease-in-out;
+  height: 100vh;
 }
 
 .nav__list.nav__list--is-open {
@@ -108,9 +113,4 @@ a {
   font: inherit;
   cursor: pointer;
   outline: inherit;
-}
-
-hr {
-  color: white;
-  background-color: white;
 }

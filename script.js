@@ -1,7 +1,5 @@
 let dog__breed = document.querySelector("#dog__breed");
 let dog__info = document.querySelector("#dog__info");
-let aussie = document.querySelector(".aussie");
-aussie.addEventListener("click", dogNameGenerator);
 let baseUrl = "https://api.thedogapi.com/v1/images/search?breed_ids=";
 
 function dogNameGenerator(e) {
