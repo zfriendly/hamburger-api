@@ -20,6 +20,8 @@ function dogNameGenerator(e) {
       console.log(dog__breed);
     });
 }
+
+//Fetch to pull all the correct indices for the 10 dog breeds
 let dogLink = document.querySelectorAll(".link");
 let dogArray = [10, 23, 36, 41, 71, 125, 149, 184, 177, 226];
 for (i = 0; i < dogArray.length; i++) {
@@ -36,6 +38,7 @@ for (i = 0; i < dogArray.length; i++) {
       console.log(data);
     });
 }
+//Hamburger slider function
 let navList = document.querySelector(".nav__list");
 let hamburger = document.querySelector(".hamburger");
 hamburger.addEventListener("click", openMenu);
@@ -43,3 +46,9 @@ function openMenu(e) {
   e.preventDefault();
   navList.classList.toggle("nav__list--is-open");
 }
+
+//res[0].breeds[0].name
+//res[0].breeds[0]['bred_for']
+//res[0].breeds[0]['breed.group']
+//res[0].breeds[0].temperament
+//res[2] (for image)
