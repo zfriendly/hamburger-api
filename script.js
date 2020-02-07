@@ -29,3 +29,15 @@ dogButton.addEventListener("click", dogImageGenerator);
 //     console.log("something went wrong", err);
 //   });
 // }
+
+
+/* Aussie - 23
+Malinois - 36
+Bernese - 41
+Border Collie - 50
+Corgi - 68
+Cavalier - 71
+Labrador - 149
+Toller - 177
+Shiba Inu - 222
+Siberian Husky - 226
