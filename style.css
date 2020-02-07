@@ -27,19 +27,19 @@ main {
   align-items: center;
   color: white;
   height: 50px;
-  background: black;
+  background: #323032;
 }
 
 .dog__image {
   max-width: 400px;
   max-height: 100%;
-  border: 5px solid black;
+  border: 5px solid #323032;
   padding: 25px;
 }
 
 #dog__breed {
   font-size: 40px;
-  color: black;
+  color: #323032;
   text-align: center;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -47,15 +47,15 @@ main {
 
 #dog__info {
   font-size: 20px;
-  color: black;
+  color: #323032;
   width: 40%;
-  border: 2px solid black;
+  border: 2px solid #323032;
   padding: 10px;
   margin-top: 50px;
 }
 
 .link {
-  color: black;
+  color: #323032;
   text-decoration: none;
 }
 .hamburger {
@@ -73,7 +73,7 @@ main {
   text-align: left;
   right: 0;
   margin-top: 0;
-  background-color: black;
+  background-color: #323032;
   font-size: 16px;
   border: 3px solid green;
   width: 350px;
@@ -87,10 +87,12 @@ a {
   bottom: 0;
   position: absolute;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   color: white;
   height: 50px;
-  background: black;
+  background: #323032;
 }
 .bottom__button {
   background: none;

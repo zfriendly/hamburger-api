@@ -34,12 +34,7 @@ for (i = 0; i < dogArray.length; i++) {
       console.log("success", res);
       return res.json();
     })
-    .then(res => {
-      let dogName = res.name;
-      dog__breed.innerText = dogName;
-      dog__info.innerText = res["bred_for"];
-      console.log(dog__breed);
-    });
+    .then(res => {});
 }
 
 /* Aussie - 23
