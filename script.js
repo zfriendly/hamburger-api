@@ -1,5 +1,3 @@
-let dog__breed = document.querySelector("#dog__breed");
-let dog__info = document.querySelector("#dog__info");
 let baseUrl = "https://api.thedogapi.com/v1/images/search?breed_ids=";
 
 //Fetch to pull all the correct indices for the 10 dog breeds
@@ -50,8 +48,8 @@ function openMenu(e) {
   navList.classList.toggle("nav__list--is-open");
 }
 
-// res[0].breeds[0].name;
-// res[0].breeds[0]["bred_for"];
-// res[0].breeds[0]["breed.group"];
-// res[0].breeds[0].temperament;
-// res[0].url;
+let dogBreed = document.querySelector("#dog__breed");
+let dogBreedGroup = document.querySelector(".dog__breed__group");
+let dogBredFor = document.querySelector(".dog__bred__for");
+let dogTemperament = document.querySelector(".dog__temperament");
+let dogImage = document.querySelector(".dog__image");
