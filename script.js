@@ -2,31 +2,8 @@ let dog__breed = document.querySelector("#dog__breed");
 let dog__info = document.querySelector("#dog__info");
 let baseUrl = "https://api.thedogapi.com/v1/images/search?breed_ids=";
 
-// function dogNameGenerator(e) {
-//   e.preventDefault();
-//   fetch(baseUrl, {
-//     headers: {
-//       "x-api-key": "d95fa56a-2c05-4a28-b011-65e14b05b28b"
-//     }
-//   })
-//     .then(res => {
-//       console.log("success", res);
-//       return res.json();
-//     })
-//     .then(res => {
-//       Corgi.push(
-//         res[0].breeds[0].name,
-//         res[0].breeds[0]["bred_for"],
-//         res[0].breeds[0]["breed.group"],
-//         res[0].breeds[0].temperament,
-//         res[2]
-//       );
-//       console.log(data);
-//       console.log(Corgi);
-//     });
-
 //Fetch to pull all the correct indices for the 10 dog breeds
-const corgi = [];
+const dogs = {};
 let dogLink = document.querySelectorAll(".link");
 let dogArray = [10, 23, 36, 41, 71, 125, 149, 184, 177, 226];
 for (i = 0; i < dogArray.length; i++) {
@@ -36,16 +13,33 @@ for (i = 0; i < dogArray.length; i++) {
     }
   })
     .then(res => {
-      console.log(res);
+      //   console.log(res);
       return res.json();
     })
     .then(data => {
-      dog = {};
-      corgi.push(dog);
       console.log(data);
-      console.log(corgi);
+      let newDogAttributes = {
+        name: data[0].breeds[0].name,
+        bredFor: data[0].breeds[0].bred_for || "Love",
+        group: data[0].breeds[0].breed_group,
+        temperament: data[0].breeds[0].temperament,
+        dogImage: data[0].url
+      };
+      dogs[data[0].breeds[0].id] = newDogAttributes;
+      addToList(data);
     });
 }
+console.log(dogs);
+function addToList(dog) {
+  const dogItem = document.createElement("li");
+  const dogLink = document.createElement("a");
+  dogLink.setAttribute("data-breed", dog[0].breeds[0].id);
+  dogLink.innerHTML = dog[0].breeds[0].name;
+  dogItem.classList.add("link");
+  dogItem.appendChild(dogLink);
+  document.querySelector(".nav__list").appendChild(dogItem);
+}
+console.log(dogs);
 
 //Hamburger slider function
 let navList = document.querySelector(".nav__list");
@@ -56,8 +50,8 @@ function openMenu(e) {
   navList.classList.toggle("nav__list--is-open");
 }
 
-//res[0].breeds[0].name
-//res[0].breeds[0]['bred_for']
-//res[0].breeds[0]['breed.group']
-//res[0].breeds[0].temperament
-//res[2] (for image)
+// res[0].breeds[0].name;
+// res[0].breeds[0]["bred_for"];
+// res[0].breeds[0]["breed.group"];
+// res[0].breeds[0].temperament;
+// res[0].url;
