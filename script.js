@@ -4,36 +4,39 @@ let baseUrl = "https://api.thedogapi.com/v1/images/search?breed_ids=";
 const dogs = {};
 let dogLink = document.querySelectorAll(".link");
 let dogArray = [10, 23, 36, 41, 71, 125, 149, 184, 177, 226];
-for (i = 0; i < dogArray.length; i++) {
-  fetch(`${baseUrl}${dogArray[i]}`, {
-    headers: {
-      "x-api-key": "d95fa56a-2c05-4a28-b011-65e14b05b28b"
-    }
-  })
-    .then(res => {
-      //   console.log(res);
-      return res.json();
+function fetchData() {
+  for (i = 0; i < dogArray.length; i++) {
+    fetch(`${baseUrl}${dogArray[i]}`, {
+      headers: {
+        "x-api-key": "d95fa56a-2c05-4a28-b011-65e14b05b28b"
+      }
     })
-    .then(data => {
-      console.log(data);
-      let newDogAttributes = {
-        name: data[0].breeds[0].name,
-        bredFor: data[0].breeds[0].bred_for || "Love",
-        group: data[0].breeds[0].breed_group,
-        temperament: data[0].breeds[0].temperament,
-        dogImage: data[0].url
-      };
-      dogs[data[0].breeds[0].id] = newDogAttributes;
-      addToList(data);
-    });
+      .then(res => {
+        //   console.log(res);
+        return res.json();
+      })
+      .then(data => {
+        //   console.log(data);
+        let newDogAttributes = {
+          name: data[0].breeds[0].name,
+          bredFor: data[0].breeds[0].bred_for || "Love",
+          group: data[0].breeds[0].breed_group,
+          temperament: data[0].breeds[0].temperament,
+          dogImage: data[0].url
+        };
+        dogs[data[0].breeds[0].id] = newDogAttributes;
+        addToList(data);
+      });
+  }
 }
-console.log(dogs);
 function addToList(dog) {
   const dogItem = document.createElement("li");
   const dogLink = document.createElement("a");
   dogLink.setAttribute("data-breed", dog[0].breeds[0].id);
   dogLink.innerHTML = dog[0].breeds[0].name;
-  dogItem.classList.add("link");
+  dogLink.classList.add("dogLink");
+  dogLink.addEventListener("click", displayDog);
+  dogItem.classList.add("dogListItem");
   dogItem.appendChild(dogLink);
   document.querySelector(".nav__list").appendChild(dogItem);
 }
@@ -48,8 +51,22 @@ function openMenu(e) {
   navList.classList.toggle("nav__list--is-open");
 }
 
-let dogBreed = document.querySelector("#dog__breed");
-let dogBreedGroup = document.querySelector(".dog__breed__group");
-let dogBredFor = document.querySelector(".dog__bred__for");
-let dogTemperament = document.querySelector(".dog__temperament");
-let dogImage = document.querySelector(".dog__image");
+// function createEvents() {
+//   let dogLinks = document.querySelectorAll(".dogLink");
+//   console.log(dogLinks);
+//   for (i = 0; i < dogLinks.length; i++) {
+//     console.log(dogLinks[i]);
+//     dogLinks[i].addEventListener("click", displayDog);
+//   }
+// }
+function displayDog(e) {
+  e.preventDefault();
+  let dogBreed = document.querySelector("#dog__breed");
+  let dogBreedGroup = document.querySelector(".dog__breed__group");
+  let dogBredFor = document.querySelector(".dog__bred__for");
+  let dogTemperament = document.querySelector(".dog__temperament");
+  let dogImage = document.querySelector(".dog__image");
+  console.log("clicked");
+}
+
+fetchData();
