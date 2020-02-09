@@ -51,22 +51,20 @@ function openMenu(e) {
   navList.classList.toggle("nav__list--is-open");
 }
 
-// function createEvents() {
-//   let dogLinks = document.querySelectorAll(".dogLink");
-//   console.log(dogLinks);
-//   for (i = 0; i < dogLinks.length; i++) {
-//     console.log(dogLinks[i]);
-//     dogLinks[i].addEventListener("click", displayDog);
-//   }
-// }
 function displayDog(e) {
   e.preventDefault();
+  openMenu(e);
+  const selectedDog = this.dataset.breed.toString();
   let dogBreed = document.querySelector("#dog__breed");
-  let dogBreedGroup = document.querySelector(".dog__breed__group");
-  let dogBredFor = document.querySelector(".dog__bred__for");
-  let dogTemperament = document.querySelector(".dog__temperament");
+  let dogBreedGroup = document.querySelector(".dog__breed__group__value");
+  let dogBredFor = document.querySelector(".dog__bred__for__value");
+  let dogTemperament = document.querySelector(".dog__temperament__value");
   let dogImage = document.querySelector(".dog__image");
-  console.log("clicked");
+  dogBreed.innerHTML = dogs[selectedDog].name;
+  dogBreedGroup.innerHTML = dogs[selectedDog].group;
+  dogBredFor.innerHTML = dogs[selectedDog].bredFor;
+  dogTemperament.innerHTML = dogs[selectedDog].temperament;
+  dogImage.setAttribute("src", dogs[selectedDog].dogImage);
 }
 
 fetchData();
