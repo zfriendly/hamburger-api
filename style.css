@@ -13,11 +13,16 @@ body {
   font-family: "Raleway", sans-serif;
   height: 1500px;
 }
+.rendered {
+  display: none;
+}
+.rendered.active {
+  display: inline;
+}
 .dog__container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background: white;
 }
 main {
   display: flex;
@@ -59,7 +64,7 @@ main {
 #dog__info {
   font-size: 20px;
   color: #323032;
-  width: 40%;
+  width: 100%;
   border: 2px solid #323032;
   padding: 10px;
   margin-top: 50px;

@@ -65,6 +65,10 @@ function displayDog(e) {
   dogBredFor.innerHTML = dogs[selectedDog].bredFor;
   dogTemperament.innerHTML = dogs[selectedDog].temperament;
   dogImage.setAttribute("src", dogs[selectedDog].dogImage);
+  let overlay = document.querySelector(".overlay");
+  overlay.style.display = "none";
+  let rendered = document.querySelector(".rendered");
+  rendered.classList.add("active");
 }
 
 fetchData();
