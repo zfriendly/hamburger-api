@@ -1,7 +1,8 @@
 /* * {
   border: 1px dotted red;
 } */
-body {
+body,
+html {
   /* background: rgb(245, 245, 245);
   background: linear-gradient(
     90deg,
@@ -11,13 +12,19 @@ body {
   background-image: url(dogbg2.png);
   margin: 0 auto;
   font-family: "Raleway", sans-serif;
-  height: 1500px;
+  height: 100%;
 }
 .rendered {
   display: none;
 }
 .rendered.active {
   display: inline;
+}
+.overlay {
+  margin-top: 250px;
+  border: 5px solid #323032;
+  padding: 25px;
+  background: white;
 }
 .dog__container {
   display: flex;
@@ -114,7 +121,8 @@ a {
 }
 .bottom {
   bottom: 0;
-  position: absolute;
+  left: 0;
+  position: fixed;
   display: flex;
   justify-content: space-around;
   align-items: center;
