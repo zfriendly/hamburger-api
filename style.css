@@ -144,3 +144,18 @@ a {
   color: pink;
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    max-width: 100vh;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #dog__info,
+  #dog__breed,
+  .dog__image {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
